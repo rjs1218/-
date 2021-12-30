@@ -11,7 +11,8 @@ Python 기초 100제 - 95
 n개의 흰 돌이 놓인 위치를 출력하는 프로그램을 작성해보자.
 """
 
-#board = [[0 for j in range(20)] for i in range(20)] 이러한 리스트 생성 방식을 List Comprehensions라고 함.
+#board = [[0 for j in range(20)] for i in range(20)]
+#이러한 리스트 생성 방식을 List Comprehensions라고 함.
 board = []
 for i in range(20):
     board.append([])
