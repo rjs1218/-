@@ -14,10 +14,35 @@ n개의 좌표를 입력받아 십(+)자 뒤집기한 결과를 출력하는 프
 
 board = []
 
-# 19x19 바둑판 만들기
+# 0으로 꽉 찬, 20 x 20 바둑판 만들기(좌표 값이 1, 1부터 시작하기 때문에 20 x 20으로 만듦)
 for i in range(20):
     board.append([])
+    for j in range(20):
+        board[i].append(0)
+
+for i in range(19):
+    boardNum = list(map(int, input().split()))   # 입력 값을 리스트 형태로 넣음
+    for j in range(19):
+        board[i+1][j+1] = boardNum[j]    # 1, 1 좌표부터 순차 적으로 입력 값을 넣음
+
+# 반복 횟수 입력 받음
+num = int(input())
+
+for i in range(num):
+    x, y = map(int, input().split())
+    for j in range(1,20):       # 좌표값이 0이면 1로, 1이면 0으로 바꿔주기
+        if board[j][y] == 0:
+            board[j][y] = 1
+        else:
+            board[j][y] = 0
+        
+        if board[x][j] == 0:
+            board[x][j] = 1
+        else:
+            board[x][j] = 0
+
+# 출력하기
+for i in range(1, 20):
     for j in range(1, 20):
-        boardNum = map(int, input().split()) # 수정해야 됨 k반복문이 말이 안됨
-        for k in range(1, 20):
-            board[j][k]
+        print(board[i][j], end=' ')
+    print()
