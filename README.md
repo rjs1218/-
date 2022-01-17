@@ -1,5 +1,5 @@
 # 알고리즘 문제 풀이
-- CodeUp
+- CodeUp<br>
 기초 100제
 
 - BEAKJOON
