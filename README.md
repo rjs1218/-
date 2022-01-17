@@ -2,5 +2,5 @@
 - CodeUp<br>
 기초 100제
 
-- BEAKJOON
+- BEAKJOON<br>
 그리디 알고리즘
