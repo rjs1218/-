@@ -8,57 +8,47 @@
 
 
 cal = input()
-cal = list(cal[::-1])   # 거꾸로 바꿔주기
+cal = list(cal[::-1])   # 거꾸로 바꿔주기(n의 자리의 숫자인지 알아내기 위해)
 
 size = 0                # n자리 숫자
-num = 0                 # 모임에 들어갈 숫자
+num = 0                 # 리스트에 들어갈 숫자
 numlist = []            # 숫자 리스트
-callist = []            # 연산 리스트
 symbol = []             # 기호 리스트
 
-# 숫자 합치고 연산 리스트에 넣어주는 과정
+# 숫자를 합치고, 연산과 숫자를 각 리스트에 넣어주는 과정
 for i in range(len(cal)):
     if cal[i] != '-' and cal[i] != '+':     # i가 숫자라면 n자리 숫자만큼 곱해주기
         size += 1
 
         cal[i] = int(cal[i])
-        if size == 1:
+        if size == 1:           # 1의 자리
             cal[i] *= 1
-        elif size == 2:
+        elif size == 2:         # 10의 자리
             cal[i] *= 10
+        elif size == 3:         # 100의 자리
+            cal[i] *= 100
+        elif size == 4:         # 1000의 자리
+            cal[i] *= 1000
+        else:                   # 10000의 자리
+            cal[i] *= 10000
 
         num += cal[i]           # 숫자 합치기
     
-    if cal[i] == '-' or cal[i] == '+':
+    if cal[i] == '-' or cal[i] == '+':      # i가 기호라면
         size = 0                # n자리 초기화
         numlist.append(num)     # 숫자 리스트에 숫자 넣어주기
-        callist.append(num)     # 연산 리스트에 숫자 넣어주기
         num = 0                 # 숫자 초기화
-        callist.append(cal[i])  # 연산 리스트에 기호 넣어주기
-        symbol.append(cal[i])
+        symbol.append(cal[i])   # 기호 리스트에 기호 넣어주기
     
     if i+1 == len(cal):         # 마지막 차례라면 연산 리스트에 넣어주기
         numlist.append(num)
-        callist.append(num)
 
-callist = callist[::-1]         # 정상적으로 바꿔주기(거꾸로 바꾼 것을 원래대로)
-numlist = numlist[::-1]
+numlist = numlist[::-1]         # 정상적으로 바꿔주기(거꾸로 바꾼 것을 원래대로)
 symbol = symbol[::-1]
 
-print(callist, '\n')
-print(numlist, '\n')
-print(symbol)
 
 result = numlist[0]     # 결과값
 index = 1               # 현재 인덱스
-
-
-
-
-# 숫자가 00001 이런 식으로 입력이 된다면 1로 변환해주기.
-# 이것만 해결하면 문제 clear.
-
-
 
 for i in symbol:    # 이번 연산이 -로 시작한다면 모든 연산을 -로 구해준다.
     if i == '-':
