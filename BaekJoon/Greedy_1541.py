@@ -45,16 +45,32 @@ callist = callist[::-1]         # 정상적으로 바꿔주기(거꾸로 바꾼 
 numlist = numlist[::-1]
 symbol = symbol[::-1]
 
-# A - B + C와 같이 + 기호 앞에 - 기호가 있다면
-# -(B + C)처럼 괄호로 묶어주고
-# - 기호 앞에 - 기호이 있다면
-# 그대로 계산해준다.
-
-# + ... -일 상황 -> 그대로 연산
-# - -일 상황 -> 그대로 연산
-# - +일 상황 -> +를 -로 바꿔주고 연산
-
-# 조건에 맞게 연산 리스트에 있는 연산들을 수행만하면 문제 clear
 print(callist, '\n')
 print(numlist, '\n')
 print(symbol)
+
+result = numlist[0]     # 결과값
+index = 1               # 현재 인덱스
+
+
+
+
+# 숫자가 00001 이런 식으로 입력이 된다면 1로 변환해주기.
+# 이것만 해결하면 문제 clear.
+
+
+
+for i in symbol:    # 이번 연산이 -로 시작한다면 모든 연산을 -로 구해준다.
+    if i == '-':
+        while True:
+            for j in numlist[index:]:
+                result -= j
+
+            break
+        break
+
+    else:           # 연산이 +로 시작한다면 이번 연산만 +로 구해준다.
+        result += numlist[index]
+        index += 1
+
+print(result)
