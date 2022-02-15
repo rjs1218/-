@@ -6,10 +6,14 @@
 이러한 조건을 만족시키면서, 진영 주식회사가 이번 신규 사원 채용에서 선발할 수 있는 신입사원의 최대 인원수를 구하는 프로그램을 작성하시오.
 '''
 
+# input()대신 sys.stdin.readline()를 이용하면 시간 초과 문제 해결 됨..
+
 # 서류 시험 성적으로 오름차순으로 한다.
 # 서류 시험 성적 1위를 선발 인원으로 뽑는다.
 # 선발 인원보다 면접 성적 순위가 높다면 다음 선발 인원으로 뽑는다.
 # 다음 선발 인원보다 면접 성적 순위가 높다면 다음 선발 인원으로 뽑는다. <반복>
+
+import sys
 
 list_p = []        # 지원자 성적 리스트
 pass_list = []     # 케이스별 최대 선발 인원
@@ -23,7 +27,7 @@ while True:
 
     for i in range(people):
         # 지원자 성적 입력
-        p = list(map(int, input().split()))
+        p = list(map(int, sys.stdin.readline().split()))
         # 지원자 리스트에 성적 넣기
         list_p.append(p)
     
