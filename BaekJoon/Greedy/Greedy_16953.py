@@ -13,33 +13,31 @@ A를 B로 바꾸는데 필요한 연산의 최솟값을 구해보자.
 
 import sys
 
-A, B = sys.stdin.readline().split()
-count = 1   # 연산 횟수
+A, B = map(int, sys.stdin.readline().split())
+count = 1       # 연산 횟수
 
 while True:
-    # 맨 뒤 숫자가 1이라면
-    if B[-1] == '1':
-        B = B[:-1]      # 맨 뒤 숫자 없애기
-        count += 1      # 연산 횟수 늘려주기
-
-    # B가 짝수이고, 맨 뒤 숫자가 1이 아니라면
-    elif int(B) % 2 == 0 and B[-1] != '1':
-        B = int(B) // 2
-        B = str(B)      # 문자열로 다시 바꿔주기
-        count += 1      # 연산 횟수 늘려주기
-
-    # B가 홀수이고, 맨 뒤 숫자가 1이 아니라면
+    # B의 맨 뒤 숫자가 1이라면
+    if B % 10 == 1:
+        B = B // 10
+        count += 1
+    
+    # B의 맨 뒤 숫자가 1이 아니라면
     else:
-        B = int(B) / 2
-        B = str("{:g}".format(B))
-        count += 1      # 연산 횟수 늘려주기
+        if B % 2 == 0:      # B가 짝수
+            B = B // 2
+            count += 1
+        
+        else:               # B가 홀수
+            B = B / 2
+            count += 1
     
-    # A를 B로 바꿀 수 있다면 연산 횟수 출력 후 정지
+    # B를 A로 바꿨다면
     if A == B:
-        print(count)
+        print(count)        # 연산 횟수 출력 후 정지
         break
-    
-    # A를 B로 바꿀 수 없다면 -1 출력 후 정지
-    elif A > B:
-        print(-1)
+
+    # B를 A로 못 바꾼다면
+    if A > B:
+        print(-1)           # -1 출력 후 정지
         break
