@@ -1,7 +1,9 @@
 
 
 # 알고리즘 문제 풀이
-<a herf="https://solved.ac/rjs1218/"><img align='right' src="http://mazassumnida.wtf/api/generate_badge?boj=rjs1218"></a>
+<a herf="https://solved.ac/rjs1218/">
+  <img align='right' src="http://mazassumnida.wtf/api/generate_badge?boj=rjs1218">
+</a>
 
 
 <h3><b>CodeUp</b></h3>
