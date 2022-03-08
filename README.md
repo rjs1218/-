@@ -10,4 +10,9 @@
 - Basic 100
 
 <h3>BEAKJOON</b></h3>
-- Greedy Algorithm</br>
+- Greedy</br>
+- Implementation</br>
+- DFS & BFS</br>
+- Binary Search</br>
+- Dynamic Programming</br>
+- Dijkstra's
