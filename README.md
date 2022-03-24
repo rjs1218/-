@@ -8,8 +8,8 @@
 
 <h3><b>CodeUp</b></h3>
 - Basic 100
- - Python
- - C
+ * Python
+ * C
 
 <h3>BEAKJOON</b></h3>
 - Greedy</br>
