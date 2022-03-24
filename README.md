@@ -7,7 +7,8 @@
 
 
 <h3><b>CodeUp</b></h3>
-- Basic 100
+- Basic 100(Python & C)</br>
+
 
 <h3>BEAKJOON</b></h3>
 - Greedy</br>
