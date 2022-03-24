@@ -7,8 +7,8 @@
 
 
 <h3><b>CodeUp</b></h3>
-- Basic 100
-  - Python
+- Basic 100</br>
+  - Python</br>
   - C
 
 <h3>BEAKJOON</b></h3>
